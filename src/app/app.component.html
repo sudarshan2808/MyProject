@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Hello and welcome to {{title}}</h3><hr>
+      <app-server-new></app-server-new>
+      
+    </div>
+  </div>
+</div>
+
+<!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button> -->
+
+<button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+
+<p *ngIf="showSecret">Secret Password = tuna</p>
+
+<div *ngFor="let logItem of log; let i = index"
+      [ngStyle]="{backgroundColor: i >= 4 ? 'blue': 'transparent'}"
+      [ngClass]="{'white-text': i >= 4}"
+      >{{ logItem }}</div>
+<!-- <input type="text" [(ngModel)]="name">
+<p>{{ name }}</p><hr> -->
+<!-- <app-server></app-server> -->
